@@ -269,6 +269,7 @@ export async function initialize({
     ? lmdbCacheDirExists
     : cacheJsonDirExists
 
+  // globby is ESM only so we have to import it like this
   const { globby: glob } = await import(`globby`)
   // For builds in case public dir exists, but cache doesn't, we need to clean up potentially stale
   // artifacts from previous builds (due to cache not being available, we can't rely on tracking of artifacts)
